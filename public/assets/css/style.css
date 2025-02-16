@@ -178,7 +178,7 @@ article .image-part img {
   transition: 3.5s;
 }
 article .image-part img:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 article .content-part {
   flex: 1;
