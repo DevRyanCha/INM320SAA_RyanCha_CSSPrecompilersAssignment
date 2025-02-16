@@ -1,13 +1,11 @@
-
 $primary-color: #324360;
 $hover-color: #35c4ce;
 $text-color: #787878;
-$footer-link-color: #989898; 
+$footer-link-color: #989898;
 $background-color: #eaf2ff;
 $font-family-header: 'Josefin Sans', sans-serif;
 $font-family-body: 'Quando';
 $transition-speed: 0.3s;
-
 
 @mixin transition($time: $transition-speed) {
   transition: $time;
@@ -18,7 +16,6 @@ $transition-speed: 0.3s;
   justify-content: center;
   align-items: center;
 }
-
 
 body {
   font-family: $font-family-body;
@@ -46,7 +43,6 @@ a {
     color: #999999;
   }
 }
-
 
 h1,
 h2,
@@ -87,7 +83,6 @@ h6 {
   font-size: 15px;
 }
 
-
 .container {
   width: 94%;
   margin: 0 auto;
@@ -96,7 +91,6 @@ h6 {
     width: 90%;
   }
 }
-
 
 header {
   font-family: $font-family-header;
@@ -186,22 +180,31 @@ header {
   }
 }
 
-
 article {
   margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
 
+  @media only screen and (min-width: 650px) {
+    flex-direction: row;
+  }
+
+  @media only screen and (max-width: 649px) {
+    flex-direction: column;
+  }
+
   .image-part {
-    flex: 1; 
+    flex: 1;
     margin-bottom: 10px;
+    overflow: hidden;
 
     img {
+      width: 100%;
+      height: auto;
       @include transition(3.5s);
 
-      
       &:hover {
-        transform: scale(1.2); 
+        transform: scale(1.2);
       }
     }
   }
@@ -209,6 +212,10 @@ article {
   .content-part {
     flex: 1;
     padding-left: 50px;
+
+    @media only screen and (max-width: 649px) {
+      padding-left: 0;
+    }
 
     .post-title {
       margin-top: 0;
@@ -236,7 +243,6 @@ article {
   }
 }
 
-
 footer {
   padding: 30px 0;
   text-align: center;
@@ -258,7 +264,7 @@ footer {
       font-size: 16px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: $footer-link-color; 
+      color: $footer-link-color;
 
       span {
         display: none;
@@ -274,7 +280,7 @@ footer {
       }
 
       &:hover {
-        color: $hover-color; 
+        color: #000;
       }
     }
   }
